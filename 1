@@ -1,0 +1,43 @@
+#include "iostream"
+#include "vector"
+using namespace std;
+
+class Matrix
+{
+public:
+    int a, b;
+    vector<vector<int>> m;
+
+    Matrix(int a, int b, vector<vector<int>> input) {
+        this->a = a;
+        this->b = b;
+        m.resize(a, vector<int>(b, 0));
+        for (int i = 0; i < a; i++) {
+            for (int j = 0; j < b; j++) {
+                m[i][j] = input[i][j];
+            }
+        }
+    }
+
+    void print()
+    {
+        for (int i = 0; i < m.size(); i++)
+        {
+            for (int j = 0; j < m[i].size(); j++)
+            {
+                cout << m[i][j] << ' ';
+            }
+            cout << '\n';
+        }
+    }
+
+
+};
+
+int main()
+{
+    Matrix mr(5,5,{{1,2,3,4,5},{7,8,9,1,1},{2,1,4,5,6},{1,2,3,4,5},{7,8,9,1,1},});
+    mr.print();
+    cout<<endl;
+    return 0;
+   }
